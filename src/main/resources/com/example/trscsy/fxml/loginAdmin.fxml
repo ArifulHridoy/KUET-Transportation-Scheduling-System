@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.trscsy.loginAdminController"
+            prefWidth="700" prefHeight="450">
+
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="0"
+          AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0"
+          AnchorPane.rightAnchor="0">
+
+        <VBox spacing="25" alignment="CENTER"
+              maxWidth="400"
+              styleClass="login-card">
+
+            <Label text="Admin Login" styleClass="label-title"/>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Username"/>
+                <TextField fx:id="usernameField" promptText="Enter username" styleClass="text-field"/>
+            </VBox>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Password"/>
+                <PasswordField fx:id="passwordField" promptText="Enter password" styleClass="password-field"/>
+            </VBox>
+
+            <HBox alignment="CENTER">
+                <Button text="Login" onAction="#handleLogin" styleClass="button-login"/>
+            </HBox>
+
+            <Label text="© KUET Transportation and Schedueling System" styleClass="footer-label"/>
+
+        </VBox>
+
+    </VBox>
+
+</AnchorPane>
