@@ -11,6 +11,9 @@ module com.example.trscsy {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens com.example.trscsy to javafx.fxml;
     exports com.example.trscsy;
+    exports com.example.trscsy.model;
+
+    opens com.example.trscsy to javafx.fxml;
+    opens com.example.trscsy.controller to javafx.fxml;
 }
