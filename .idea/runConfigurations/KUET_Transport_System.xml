@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="KUET Transport System" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.example.kuet_transportation_and_schedueling_system.HelloApplication" />
+    <module name="KUET_Transportation_and_Schedueling_System" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.example.kuet_transportation_and_schedueling_system.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
+

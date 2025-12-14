@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>TrScSy</artifactId>
+    <artifactId>KUET_Transportation_and_Schedueling_System</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>TrScSy</name>
+    <name>KUET_Transportation_and_Schedueling_System</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -100,6 +100,11 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
@@ -133,7 +138,9 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.trscsy/com.example.trscsy.MainApplication</mainClass>
+                            <mainClass>
+                                com.example.kuet_transportation_and_schedueling_system/com.example.kuet_transportation_and_schedueling_system.HelloApplication
+                            </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

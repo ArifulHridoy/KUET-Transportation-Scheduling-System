@@ -1,0 +1,588 @@
+[2025-12-12 18:08:58] [ERROR] Database connection failed
+[2025-12-12 18:08:59] [INFO] Application started successfully
+[2025-12-12 18:09:17] [ERROR] Login error: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2025-12-12 18:10:16] [ERROR] Registration error: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2025-12-12 18:17:02] [ERROR] Database connection failed
+[2025-12-12 18:17:03] [INFO] Application started successfully
+[2025-12-12 18:17:21] [INFO] Application closed
+[2025-12-12 18:17:49] [ERROR] Database connection failed
+[2025-12-12 18:17:50] [INFO] Application started successfully
+[2025-12-12 18:17:56] [INFO] Application closed
+[2025-12-12 18:25:23] [ERROR] Database connection failed
+[2025-12-12 18:25:23] [INFO] Application started successfully
+[2025-12-12 18:47:56] [INFO] Application closed
+[2025-12-12 18:48:58] [ERROR] Database connection failed
+[2025-12-12 18:48:59] [INFO] Application started successfully
+[2025-12-12 18:49:35] [INFO] Application closed
+[2025-12-12 19:02:00] [INFO] Database initialized successfully
+[2025-12-12 19:02:01] [INFO] Application started successfully
+[2025-12-12 19:02:14] [INFO] User logged in: admin
+[2025-12-12 19:02:14] [INFO] Login successful: admin (admin)
+[2025-12-12 19:02:42] [ADMIN] admin - Logged out
+[2025-12-12 19:02:42] [INFO] User logged out: admin
+[2025-12-12 19:03:31] [ERROR] Database connection failed during registration
+[2025-12-12 19:12:37] [INFO] Database initialized successfully
+[2025-12-12 19:12:38] [INFO] Application started successfully
+[2025-12-12 19:12:52] [INFO] User logged in: admin
+[2025-12-12 19:12:52] [INFO] Login successful: admin (admin)
+[2025-12-12 19:13:58] [ADMIN] admin - Added route: Route 3
+[2025-12-12 19:14:31] [ADMIN] admin - Added bus: KUET-04
+[2025-12-12 19:15:19] [ADMIN] admin - Updated route: 4
+[2025-12-12 19:15:48] [ADMIN] admin - Created schedule for bus KUET-04
+[2025-12-12 19:16:18] [ADMIN] admin - Logged out
+[2025-12-12 19:16:18] [INFO] User logged out: admin
+[2025-12-12 19:16:56] [INFO] New student registered: 2207051 - Ariful Islam Sheikh
+[2025-12-12 19:17:13] [INFO] User logged in: ariful51
+[2025-12-12 19:17:13] [INFO] Login successful: ariful51 (student)
+[2025-12-12 19:17:13] [INFO] User logged in: ariful51
+[2025-12-12 19:17:17] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 19:19:42] [STUDENT] ariful51 - Submitted request: Bus Change Request
+[2025-12-12 19:19:51] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-12 19:19:51] [STUDENT] ariful51 - Logged out
+[2025-12-12 19:19:51] [INFO] User logged out: ariful51
+[2025-12-12 19:20:00] [INFO] User logged in: admin
+[2025-12-12 19:20:00] [INFO] Login successful: admin (admin)
+[2025-12-12 19:20:08] [ADMIN] admin - Approved request: 1
+[2025-12-12 19:20:38] [ADMIN] admin - Assigned student 2207051 to bus/route
+[2025-12-12 19:21:17] [ADMIN] admin - Sent broadcast message to all students
+[2025-12-12 19:21:34] [ADMIN] admin - Logged out
+[2025-12-12 19:21:34] [INFO] User logged out: admin
+[2025-12-12 19:21:47] [INFO] User logged in: admin
+[2025-12-12 19:21:47] [INFO] Login successful: admin (admin)
+[2025-12-12 19:21:55] [ADMIN] admin - Logged out
+[2025-12-12 19:21:55] [INFO] User logged out: admin
+[2025-12-12 19:22:08] [INFO] User logged in: ariful51
+[2025-12-12 19:22:08] [INFO] Login successful: ariful51 (student)
+[2025-12-12 19:22:08] [INFO] User logged in: ariful51
+[2025-12-12 19:22:08] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 19:24:01] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-12 19:24:01] [STUDENT] ariful51 - Logged out
+[2025-12-12 19:24:01] [INFO] User logged out: ariful51
+[2025-12-12 19:24:07] [INFO] Application closed
+[2025-12-12 19:35:14] [INFO] Database initialized successfully
+[2025-12-12 19:35:14] [INFO] Application closed
+[2025-12-12 19:41:58] [INFO] Database initialized successfully
+[2025-12-12 19:42:00] [INFO] Application started successfully
+[2025-12-12 19:42:25] [INFO] User logged in: ariful51
+[2025-12-12 19:42:25] [INFO] Login successful: ariful51 (student)
+[2025-12-12 19:42:25] [ERROR] Login error: Error resolving onAction='#handleRefreshSchedule', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/StudentDashboard.fxml:99
+
+[2025-12-12 19:42:39] [INFO] Application closed
+[2025-12-12 19:54:58] [INFO] Database initialized successfully
+[2025-12-12 19:54:59] [INFO] Application started successfully
+[2025-12-12 19:55:07] [INFO] User logged in: admin
+[2025-12-12 19:55:07] [INFO] Login successful: admin (admin)
+[2025-12-12 19:55:07] [ERROR] Login error: Error resolving onAction='#handleSendToAll', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml:217
+
+[2025-12-12 19:55:54] [INFO] Application closed
+[2025-12-12 20:00:50] [INFO] Database initialized successfully
+[2025-12-12 20:00:51] [INFO] Application started successfully
+[2025-12-12 20:01:01] [INFO] User logged in: admin
+[2025-12-12 20:01:01] [INFO] Login successful: admin (admin)
+[2025-12-12 20:01:02] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:01:14] [INFO] Application closed
+[2025-12-12 20:01:52] [ERROR] Database connection failed
+[2025-12-12 20:01:53] [INFO] Application started successfully
+[2025-12-12 20:02:00] [INFO] Application closed
+[2025-12-12 20:07:59] [INFO] Database initialized successfully
+[2025-12-12 20:08:00] [INFO] Application started successfully
+[2025-12-12 20:08:07] [INFO] User logged in: admin
+[2025-12-12 20:08:07] [INFO] Login successful: admin (admin)
+[2025-12-12 20:08:07] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:08:12] [INFO] Application closed
+[2025-12-12 20:11:41] [INFO] Database initialized successfully
+[2025-12-12 20:11:41] [INFO] Database initialized successfully
+[2025-12-12 20:11:42] [INFO] Application started successfully
+[2025-12-12 20:11:42] [INFO] Application started successfully
+[2025-12-12 20:11:52] [INFO] User logged in: admin
+[2025-12-12 20:11:52] [INFO] Login successful: admin (admin)
+[2025-12-12 20:11:52] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:11:58] [INFO] User logged in: admin
+[2025-12-12 20:11:58] [INFO] Login successful: admin (admin)
+[2025-12-12 20:11:58] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:11:58] [INFO] User logged in: admin
+[2025-12-12 20:11:58] [INFO] Login successful: admin (admin)
+[2025-12-12 20:11:58] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:11:58] [INFO] User logged in: admin
+[2025-12-12 20:11:58] [INFO] Login successful: admin (admin)
+[2025-12-12 20:11:58] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:11:59] [INFO] User logged in: admin
+[2025-12-12 20:11:59] [INFO] Login successful: admin (admin)
+[2025-12-12 20:11:59] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:12:04] [INFO] Application closed
+[2025-12-12 20:12:08] [INFO] Application closed
+[2025-12-12 20:15:56] [INFO] Database initialized successfully
+[2025-12-12 20:15:57] [INFO] Application started successfully
+[2025-12-12 20:16:06] [INFO] User logged in: admin
+[2025-12-12 20:16:06] [INFO] Login successful: admin (admin)
+[2025-12-12 20:16:06] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:16:12] [INFO] Application closed
+[2025-12-12 20:35:22] [INFO] Database initialized successfully
+[2025-12-12 20:35:23] [INFO] Application started successfully
+[2025-12-12 20:35:33] [WARNING] Failed login attempt: admin
+[2025-12-12 20:35:44] [INFO] User logged in: admin
+[2025-12-12 20:35:44] [INFO] Login successful: admin (admin)
+[2025-12-12 20:35:44] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:50:44] [INFO] Application closed
+[2025-12-12 20:52:10] [INFO] Database initialized successfully
+[2025-12-12 20:52:11] [INFO] Application started successfully
+[2025-12-12 20:52:22] [INFO] Application closed
+[2025-12-12 20:53:00] [INFO] Database initialized successfully
+[2025-12-12 20:53:01] [INFO] Application started successfully
+[2025-12-12 20:53:11] [WARNING] Failed login attempt: admin
+[2025-12-12 20:53:19] [INFO] User logged in: admin
+[2025-12-12 20:53:19] [INFO] Login successful: admin (admin)
+[2025-12-12 20:53:19] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:59:26] [INFO] Database initialized successfully
+[2025-12-12 20:59:27] [INFO] Application started successfully
+[2025-12-12 20:59:36] [INFO] User logged in: admin
+[2025-12-12 20:59:36] [INFO] Login successful: admin (admin)
+[2025-12-12 20:59:36] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 20:59:50] [INFO] Application closed
+[2025-12-12 21:00:33] [INFO] Database initialized successfully
+[2025-12-12 21:00:34] [INFO] Application started successfully
+[2025-12-12 21:00:42] [INFO] User logged in: admin
+[2025-12-12 21:00:42] [INFO] Login successful: admin (admin)
+[2025-12-12 21:00:42] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 21:00:46] [INFO] Application closed
+[2025-12-12 21:01:29] [INFO] Database initialized successfully
+[2025-12-12 21:01:30] [INFO] Application started successfully
+[2025-12-12 21:02:15] [INFO] User logged in: admin
+[2025-12-12 21:02:15] [INFO] Login successful: admin (admin)
+[2025-12-12 21:02:15] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 21:03:52] [INFO] Database initialized successfully
+[2025-12-12 21:03:53] [INFO] Application started successfully
+[2025-12-12 21:16:04] [INFO] Database initialized successfully
+[2025-12-12 21:16:05] [INFO] Application started successfully
+[2025-12-12 21:16:17] [INFO] User logged in: admin
+[2025-12-12 21:16:17] [INFO] Login successful: admin (admin)
+[2025-12-12 21:16:17] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 21:16:19] [INFO] User logged in: admin
+[2025-12-12 21:16:19] [INFO] Login successful: admin (admin)
+[2025-12-12 21:16:19] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/AdminDashboard.fxml
+
+[2025-12-12 21:38:13] [INFO] Database initialized successfully
+[2025-12-12 21:38:14] [INFO] Application started successfully
+[2025-12-12 21:38:29] [INFO] User logged in: admin
+[2025-12-12 21:38:29] [INFO] Login successful: admin (admin)
+[2025-12-12 21:39:02] [ADMIN] admin - Logged out
+[2025-12-12 21:39:02] [INFO] User logged out: admin
+[2025-12-12 21:43:13] [INFO] Database initialized successfully
+[2025-12-12 21:43:14] [INFO] Application started successfully
+[2025-12-12 21:43:26] [INFO] User logged in: admin
+[2025-12-12 21:43:26] [INFO] Login successful: admin (admin)
+[2025-12-12 21:45:44] [ADMIN] admin - Logged out
+[2025-12-12 21:45:44] [INFO] User logged out: admin
+[2025-12-12 21:46:08] [WARNING] Failed login attempt: ariful51
+[2025-12-12 21:46:18] [INFO] User logged in: ariful51
+[2025-12-12 21:46:18] [INFO] Login successful: ariful51 (student)
+[2025-12-12 21:46:19] [ERROR] Login error: String is not a valid type.
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/StudentDashboard.fxml:121
+
+[2025-12-12 21:55:17] [INFO] Database initialized successfully
+[2025-12-12 21:55:18] [INFO] Application started successfully
+[2025-12-12 21:55:35] [INFO] User logged in: ariful51
+[2025-12-12 21:55:35] [INFO] Login successful: ariful51 (student)
+[2025-12-12 21:55:35] [ERROR] Login error: String is not a valid type.
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/StudentDashboard.fxml:121
+
+[2025-12-12 21:55:54] [INFO] User logged in: ariful51
+[2025-12-12 21:55:54] [INFO] Login successful: ariful51 (student)
+[2025-12-12 21:55:54] [ERROR] Login error: String is not a valid type.
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/StudentDashboard.fxml:121
+
+[2025-12-12 21:58:01] [INFO] Database initialized successfully
+[2025-12-12 21:58:02] [INFO] Application started successfully
+[2025-12-12 21:58:11] [INFO] User logged in: admin
+[2025-12-12 21:58:11] [INFO] Login successful: admin (admin)
+[2025-12-12 21:58:44] [ADMIN] admin - Logged out
+[2025-12-12 21:58:44] [INFO] User logged out: admin
+[2025-12-12 21:58:59] [INFO] User logged in: ariful51
+[2025-12-12 21:58:59] [INFO] Login successful: ariful51 (student)
+[2025-12-12 21:59:00] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/StudentDashboard.fxml
+
+[2025-12-12 21:59:11] [INFO] User logged in: ariful51
+[2025-12-12 21:59:11] [INFO] Login successful: ariful51 (student)
+[2025-12-12 21:59:11] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/StudentDashboard.fxml
+
+[2025-12-12 22:03:16] [INFO] Database initialized successfully
+[2025-12-12 22:03:18] [INFO] Application started successfully
+[2025-12-12 22:03:31] [INFO] User logged in: ariful51
+[2025-12-12 22:03:31] [INFO] Login successful: ariful51 (student)
+[2025-12-12 22:03:31] [ERROR] Login error: 
+/C:/Users/LENOVO/IdeaProjects/TestDB/KUET_Transportation_and_Schedueling_System/target/classes/com/example/kuet_transportation_and_schedueling_system/view/StudentDashboard.fxml
+
+[2025-12-12 22:07:13] [INFO] Database initialized successfully
+[2025-12-12 22:07:14] [INFO] Application started successfully
+[2025-12-12 22:07:23] [INFO] User logged in: admin
+[2025-12-12 22:07:23] [INFO] Login successful: admin (admin)
+[2025-12-12 22:07:36] [ADMIN] admin - Logged out
+[2025-12-12 22:07:36] [INFO] User logged out: admin
+[2025-12-12 22:07:47] [INFO] User logged in: ariful51
+[2025-12-12 22:07:47] [INFO] Login successful: ariful51 (student)
+[2025-12-12 22:07:47] [INFO] User logged in: ariful51
+[2025-12-12 22:08:15] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 22:08:45] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-12 22:08:45] [STUDENT] ariful51 - Logged out
+[2025-12-12 22:08:45] [INFO] User logged out: ariful51
+[2025-12-12 22:08:57] [INFO] User logged in: ariful51
+[2025-12-12 22:08:57] [INFO] Login successful: ariful51 (student)
+[2025-12-12 22:08:57] [INFO] User logged in: ariful51
+[2025-12-12 22:09:01] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 22:09:08] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-12 22:09:08] [STUDENT] ariful51 - Logged out
+[2025-12-12 22:09:08] [INFO] User logged out: ariful51
+[2025-12-12 22:09:53] [INFO] New student registered: 2207060 - Majharul Islam Shajid
+[2025-12-12 22:09:53] [ERROR] Registration error: Cannot invoke "javafx.scene.control.TextField.clear()" because "this.departmentField" is null
+[2025-12-12 22:10:14] [INFO] User logged in: shajid60
+[2025-12-12 22:10:14] [INFO] Login successful: shajid60 (student)
+[2025-12-12 22:10:14] [INFO] User logged in: shajid60
+[2025-12-12 22:10:18] [INFO] Message auto-refresh thread started for student: 2207060
+[2025-12-12 22:10:52] [INFO] Message auto-refresh thread stopped for student: 2207060
+[2025-12-12 22:10:52] [STUDENT] shajid60 - Logged out
+[2025-12-12 22:10:52] [INFO] User logged out: shajid60
+[2025-12-12 22:11:01] [INFO] User logged in: admin
+[2025-12-12 22:11:01] [INFO] Login successful: admin (admin)
+[2025-12-12 22:11:26] [ADMIN] admin - Assigned student 2207060 to bus/route
+[2025-12-12 22:12:18] [ADMIN] admin - Sent message to students
+[2025-12-12 22:12:29] [ADMIN] admin - Logged out
+[2025-12-12 22:12:29] [INFO] User logged out: admin
+[2025-12-12 22:12:41] [INFO] User logged in: shajid60
+[2025-12-12 22:12:41] [INFO] Login successful: shajid60 (student)
+[2025-12-12 22:12:41] [INFO] User logged in: shajid60
+[2025-12-12 22:12:46] [INFO] Message auto-refresh thread started for student: 2207060
+[2025-12-12 22:13:04] [INFO] Message auto-refresh thread stopped for student: 2207060
+[2025-12-12 22:13:04] [STUDENT] shajid60 - Logged out
+[2025-12-12 22:13:04] [INFO] User logged out: shajid60
+[2025-12-12 22:13:19] [INFO] User logged in: admin
+[2025-12-12 22:13:19] [INFO] Login successful: admin (admin)
+[2025-12-12 22:13:36] [ADMIN] admin - Logged out
+[2025-12-12 22:13:36] [INFO] User logged out: admin
+[2025-12-12 22:13:39] [INFO] Application closed
+[2025-12-12 23:15:33] [INFO] Database initialized successfully
+[2025-12-12 23:15:35] [INFO] Application started successfully
+[2025-12-12 23:15:48] [INFO] User logged in: admin
+[2025-12-12 23:15:48] [INFO] Login successful: admin (admin)
+[2025-12-12 23:17:03] [ADMIN] admin - Logged out
+[2025-12-12 23:17:03] [INFO] User logged out: admin
+[2025-12-12 23:17:15] [INFO] User logged in: ariful51
+[2025-12-12 23:17:15] [INFO] Login successful: ariful51 (student)
+[2025-12-12 23:17:16] [INFO] User logged in: ariful51
+[2025-12-12 23:17:19] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 23:18:25] [STUDENT] ariful51 - Submitted request: Route Change Request
+[2025-12-12 23:18:45] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-12 23:18:45] [STUDENT] ariful51 - Logged out
+[2025-12-12 23:18:45] [INFO] User logged out: ariful51
+[2025-12-12 23:18:54] [INFO] User logged in: admin
+[2025-12-12 23:18:54] [INFO] Login successful: admin (admin)
+[2025-12-12 23:19:03] [ADMIN] admin - Approved request: 2
+[2025-12-12 23:19:22] [ADMIN] admin - Assigned student 2207051 to bus/route
+[2025-12-12 23:19:34] [ADMIN] admin - Logged out
+[2025-12-12 23:19:34] [INFO] User logged out: admin
+[2025-12-12 23:19:46] [INFO] User logged in: ariful51
+[2025-12-12 23:19:46] [INFO] Login successful: ariful51 (student)
+[2025-12-12 23:19:46] [INFO] User logged in: ariful51
+[2025-12-12 23:19:49] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 23:20:00] [INFO] Application closed
+[2025-12-12 23:26:56] [INFO] Database initialized successfully
+[2025-12-12 23:26:57] [INFO] Application started successfully
+[2025-12-12 23:27:05] [INFO] User logged in: admin
+[2025-12-12 23:27:05] [INFO] Login successful: admin (admin)
+[2025-12-12 23:28:24] [INFO] Application closed
+[2025-12-12 23:28:36] [INFO] Database initialized successfully
+[2025-12-12 23:28:37] [INFO] Application started successfully
+[2025-12-12 23:28:46] [INFO] User logged in: admin
+[2025-12-12 23:28:46] [INFO] Login successful: admin (admin)
+[2025-12-12 23:29:15] [ADMIN] admin - Logged out
+[2025-12-12 23:29:15] [INFO] User logged out: admin
+[2025-12-12 23:29:58] [INFO] New student registered: 2207049 - Md. Toufiq Hasan
+[2025-12-12 23:29:58] [ERROR] Registration error: Cannot invoke "javafx.scene.control.TextField.clear()" because "this.departmentField" is null
+[2025-12-12 23:30:17] [INFO] User logged in: nibir49
+[2025-12-12 23:30:17] [INFO] Login successful: nibir49 (student)
+[2025-12-12 23:30:17] [INFO] User logged in: nibir49
+[2025-12-12 23:30:19] [INFO] Message auto-refresh thread started for student: 2207049
+[2025-12-12 23:30:52] [STUDENT] nibir49 - Submitted request: Other
+[2025-12-12 23:31:02] [INFO] Message auto-refresh thread stopped for student: 2207049
+[2025-12-12 23:31:02] [STUDENT] nibir49 - Logged out
+[2025-12-12 23:31:02] [INFO] User logged out: nibir49
+[2025-12-12 23:31:16] [INFO] User logged in: admin
+[2025-12-12 23:31:16] [INFO] Login successful: admin (admin)
+[2025-12-12 23:31:42] [ADMIN] admin - Assigned student 2207049 to bus/route
+[2025-12-12 23:31:52] [ADMIN] admin - Approved request: 3
+[2025-12-12 23:31:58] [ADMIN] admin - Logged out
+[2025-12-12 23:31:58] [INFO] User logged out: admin
+[2025-12-12 23:32:09] [INFO] User logged in: nibir49
+[2025-12-12 23:32:09] [INFO] Login successful: nibir49 (student)
+[2025-12-12 23:32:09] [INFO] User logged in: nibir49
+[2025-12-12 23:32:12] [INFO] Message auto-refresh thread started for student: 2207049
+[2025-12-12 23:32:30] [INFO] Application closed
+[2025-12-12 23:37:28] [INFO] Database initialized successfully
+[2025-12-12 23:37:30] [INFO] Application started successfully
+[2025-12-12 23:37:40] [WARNING] Failed login attempt: admin
+[2025-12-12 23:37:58] [INFO] User logged in: admin
+[2025-12-12 23:37:58] [INFO] Login successful: admin (admin)
+[2025-12-12 23:38:26] [ADMIN] admin - Logged out
+[2025-12-12 23:38:26] [INFO] User logged out: admin
+[2025-12-12 23:38:41] [INFO] User logged in: ariful51
+[2025-12-12 23:38:41] [INFO] Login successful: ariful51 (student)
+[2025-12-12 23:38:41] [INFO] User logged in: ariful51
+[2025-12-12 23:38:44] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 23:45:47] [INFO] Database initialized successfully
+[2025-12-12 23:45:48] [INFO] Application started successfully
+[2025-12-12 23:46:06] [INFO] User logged in: ariful51
+[2025-12-12 23:46:06] [INFO] Login successful: ariful51 (student)
+[2025-12-12 23:46:06] [INFO] User logged in: ariful51
+[2025-12-12 23:46:08] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 23:47:02] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-12 23:47:02] [STUDENT] ariful51 - Logged out
+[2025-12-12 23:47:02] [INFO] User logged out: ariful51
+[2025-12-12 23:47:14] [INFO] User logged in: admin
+[2025-12-12 23:47:14] [INFO] Login successful: admin (admin)
+[2025-12-12 23:47:46] [INFO] Application closed
+[2025-12-12 23:52:59] [INFO] Database initialized successfully
+[2025-12-12 23:53:00] [INFO] Application started successfully
+[2025-12-12 23:53:31] [INFO] User logged in: ariful51
+[2025-12-12 23:53:31] [INFO] Login successful: ariful51 (student)
+[2025-12-12 23:53:31] [INFO] User logged in: ariful51
+[2025-12-12 23:53:33] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-12 23:55:49] [INFO] Application closed
+[2025-12-13 00:19:36] [INFO] Database initialized successfully
+[2025-12-13 00:19:38] [INFO] Application started successfully
+[2025-12-13 00:19:46] [INFO] User logged in: admin
+[2025-12-13 00:19:46] [INFO] Login successful: admin (admin)
+[2025-12-13 00:20:20] [ADMIN] admin - Logged out
+[2025-12-13 00:20:20] [INFO] User logged out: admin
+[2025-12-13 00:20:41] [INFO] User logged in: ariful51
+[2025-12-13 00:20:41] [INFO] Login successful: ariful51 (student)
+[2025-12-13 00:20:41] [INFO] User logged in: ariful51
+[2025-12-13 00:20:43] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-13 00:21:18] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-13 00:21:18] [STUDENT] ariful51 - Logged out
+[2025-12-13 00:21:18] [INFO] User logged out: ariful51
+[2025-12-13 00:21:28] [INFO] User logged in: nibir49
+[2025-12-13 00:21:28] [INFO] Login successful: nibir49 (student)
+[2025-12-13 00:21:28] [INFO] User logged in: nibir49
+[2025-12-13 00:21:30] [INFO] Message auto-refresh thread started for student: 2207049
+[2025-12-13 11:06:09] [INFO] Database initialized successfully
+[2025-12-13 11:06:10] [INFO] Application started successfully
+[2025-12-13 11:07:32] [INFO] Database initialized successfully
+[2025-12-13 11:07:33] [INFO] Application started successfully
+[2025-12-13 11:07:44] [INFO] Application closed
+[2025-12-13 11:14:23] [INFO] Database initialized successfully
+[2025-12-13 11:14:24] [INFO] Application started successfully
+[2025-12-13 11:14:44] [INFO] User logged in: admin
+[2025-12-13 11:14:44] [INFO] Login successful: admin (admin)
+[2025-12-13 11:16:23] [ADMIN] admin - Logged out
+[2025-12-13 11:16:23] [INFO] User logged out: admin
+[2025-12-13 11:16:39] [INFO] User logged in: ariful51
+[2025-12-13 11:16:39] [INFO] Login successful: ariful51 (student)
+[2025-12-13 11:16:39] [INFO] User logged in: ariful51
+[2025-12-13 11:16:53] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-13 11:20:09] [INFO] Database initialized successfully
+[2025-12-13 11:20:11] [INFO] Application started successfully
+[2025-12-13 11:20:23] [INFO] User logged in: ariful51
+[2025-12-13 11:20:23] [INFO] Login successful: ariful51 (student)
+[2025-12-13 11:20:23] [INFO] User logged in: ariful51
+[2025-12-13 11:20:24] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-13 11:21:17] [INFO] Application closed
+[2025-12-13 11:22:26] [INFO] Database initialized successfully
+[2025-12-13 11:22:28] [INFO] Application started successfully
+[2025-12-13 11:22:43] [INFO] User logged in: ariful51
+[2025-12-13 11:22:43] [INFO] Login successful: ariful51 (student)
+[2025-12-13 11:22:43] [INFO] User logged in: ariful51
+[2025-12-13 11:22:43] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-13 11:23:59] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-13 11:23:59] [STUDENT] ariful51 - Logged out
+[2025-12-13 11:23:59] [INFO] User logged out: ariful51
+[2025-12-13 11:24:10] [INFO] User logged in: admin
+[2025-12-13 11:24:10] [INFO] Login successful: admin (admin)
+[2025-12-13 11:25:55] [ADMIN] admin - Sent message to students
+[2025-12-13 11:26:00] [ADMIN] admin - Logged out
+[2025-12-13 11:26:00] [INFO] User logged out: admin
+[2025-12-13 11:26:11] [WARNING] Failed login attempt: nibir49
+[2025-12-13 11:26:16] [INFO] User logged in: nibir49
+[2025-12-13 11:26:16] [INFO] Login successful: nibir49 (student)
+[2025-12-13 11:26:16] [INFO] User logged in: nibir49
+[2025-12-13 11:26:16] [INFO] Message auto-refresh thread started for student: 2207049
+[2025-12-13 11:28:26] [STUDENT] nibir49 - Submitted request: Route Change
+[2025-12-13 11:28:35] [INFO] Message auto-refresh thread stopped for student: 2207049
+[2025-12-13 11:28:35] [STUDENT] nibir49 - Logged out
+[2025-12-13 11:28:35] [INFO] User logged out: nibir49
+[2025-12-13 11:28:43] [INFO] User logged in: admin
+[2025-12-13 11:28:43] [INFO] Login successful: admin (admin)
+[2025-12-13 11:30:01] [ADMIN] admin - Assigned student 2207049 to bus/route
+[2025-12-13 11:30:10] [ADMIN] admin - Approved request: 4
+[2025-12-13 11:30:15] [ADMIN] admin - Logged out
+[2025-12-13 11:30:15] [INFO] User logged out: admin
+[2025-12-13 11:30:31] [INFO] User logged in: nibir49
+[2025-12-13 11:30:31] [INFO] Login successful: nibir49 (student)
+[2025-12-13 11:30:31] [INFO] User logged in: nibir49
+[2025-12-13 11:30:31] [INFO] Message auto-refresh thread started for student: 2207049
+[2025-12-13 11:31:20] [INFO] Message auto-refresh thread stopped for student: 2207049
+[2025-12-13 11:31:20] [STUDENT] nibir49 - Logged out
+[2025-12-13 11:31:20] [INFO] User logged out: nibir49
+[2025-12-13 11:31:32] [INFO] User logged in: admin
+[2025-12-13 11:31:32] [INFO] Login successful: admin (admin)
+[2025-12-13 11:32:58] [INFO] Application closed
+[2025-12-13 11:36:35] [INFO] Database initialized successfully
+[2025-12-13 11:36:37] [INFO] Application started successfully
+[2025-12-13 11:36:47] [INFO] User logged in: admin
+[2025-12-13 11:36:47] [INFO] Login successful: admin (admin)
+[2025-12-13 11:37:51] [ADMIN] admin - Logged out
+[2025-12-13 11:37:51] [INFO] User logged out: admin
+[2025-12-13 11:38:03] [INFO] User logged in: ariful51
+[2025-12-13 11:38:03] [INFO] Login successful: ariful51 (student)
+[2025-12-13 11:38:03] [INFO] User logged in: ariful51
+[2025-12-13 11:38:03] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-13 11:38:26] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-13 11:38:26] [STUDENT] ariful51 - Logged out
+[2025-12-13 11:38:26] [INFO] User logged out: ariful51
+[2025-12-13 11:38:36] [INFO] User logged in: nibir49
+[2025-12-13 11:38:36] [INFO] Login successful: nibir49 (student)
+[2025-12-13 11:38:36] [INFO] User logged in: nibir49
+[2025-12-13 11:38:36] [INFO] Message auto-refresh thread started for student: 2207049
+[2025-12-13 11:39:14] [INFO] Application closed
+[2025-12-13 14:44:06] [INFO] Database initialized successfully
+[2025-12-13 14:44:07] [INFO] Application started successfully
+[2025-12-13 14:45:07] [INFO] New student registered: 2207013 - Md. Khorshed Sheikh
+[2025-12-13 14:45:07] [ERROR] Registration error: Cannot invoke "javafx.scene.control.TextField.clear()" because "this.departmentField" is null
+[2025-12-13 14:45:25] [INFO] User logged in: khorshed13
+[2025-12-13 14:45:25] [INFO] Login successful: khorshed13 (student)
+[2025-12-13 14:45:25] [INFO] User logged in: khorshed13
+[2025-12-13 14:45:25] [INFO] Message auto-refresh thread started for student: 2207013
+[2025-12-13 14:46:00] [STUDENT] khorshed13 - Submitted request: Schedule Adjustment
+[2025-12-13 14:46:16] [INFO] Message auto-refresh thread stopped for student: 2207013
+[2025-12-13 14:46:16] [STUDENT] khorshed13 - Logged out
+[2025-12-13 14:46:16] [INFO] User logged out: khorshed13
+[2025-12-13 14:46:25] [INFO] User logged in: admin
+[2025-12-13 14:46:25] [INFO] Login successful: admin (admin)
+[2025-12-13 14:47:13] [ADMIN] admin - Assigned student 2207013 to bus/route
+[2025-12-13 14:47:24] [ADMIN] admin - Approved request: 5
+[2025-12-13 14:47:46] [ADMIN] admin - Logged out
+[2025-12-13 14:47:46] [INFO] User logged out: admin
+[2025-12-13 14:49:13] [INFO] User logged in: khorshed13
+[2025-12-13 14:49:13] [INFO] Login successful: khorshed13 (student)
+[2025-12-13 14:49:13] [INFO] User logged in: khorshed13
+[2025-12-13 14:49:13] [INFO] Message auto-refresh thread started for student: 2207013
+[2025-12-13 14:50:12] [INFO] Application closed
+[2025-12-14 12:02:50] [ERROR] Database connection failed
+[2025-12-14 12:02:56] [INFO] Application started successfully
+[2025-12-14 12:03:13] [INFO] Application closed
+[2025-12-14 12:03:47] [INFO] Database initialized successfully
+[2025-12-14 12:03:49] [INFO] Application started successfully
+[2025-12-14 12:04:00] [INFO] User logged in: admin
+[2025-12-14 12:04:00] [INFO] Login successful: admin (admin)
+[2025-12-14 12:04:44] [ADMIN] admin - Logged out
+[2025-12-14 12:04:44] [INFO] User logged out: admin
+[2025-12-14 12:04:57] [INFO] User logged in: ariful51
+[2025-12-14 12:04:57] [INFO] Login successful: ariful51 (student)
+[2025-12-14 12:04:57] [INFO] User logged in: ariful51
+[2025-12-14 12:04:57] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-14 12:05:28] [INFO] Application closed
+[2025-12-14 18:49:44] [ERROR] Database connection failed
+[2025-12-14 18:49:46] [INFO] Application started successfully
+[2025-12-14 18:50:05] [INFO] Application closed
+[2025-12-14 18:52:51] [ERROR] Database connection failed
+[2025-12-14 18:52:52] [INFO] Application started successfully
+[2025-12-14 18:53:07] [INFO] Application closed
+[2025-12-14 18:56:38] [ERROR] Database connection failed
+[2025-12-14 18:56:39] [INFO] Application started successfully
+[2025-12-14 18:57:16] [ERROR] Database connection failed
+[2025-12-14 18:57:17] [INFO] Application started successfully
+[2025-12-14 18:57:36] [ERROR] Database connection failed during login
+[2025-12-14 18:57:36] [INFO] Application closed
+[2025-12-14 18:58:17] [INFO] Database initialized successfully
+[2025-12-14 18:58:18] [INFO] Application started successfully
+[2025-12-14 18:58:23] [INFO] Application closed
+[2025-12-14 18:58:59] [INFO] Database initialized successfully
+[2025-12-14 18:59:00] [INFO] Application started successfully
+[2025-12-14 18:59:04] [INFO] Application closed
+[2025-12-14 18:59:14] [INFO] Database initialized successfully
+[2025-12-14 18:59:15] [INFO] Application started successfully
+[2025-12-14 18:59:26] [INFO] Application closed
+[2025-12-14 18:59:42] [INFO] Database initialized successfully
+[2025-12-14 18:59:43] [INFO] Application started successfully
+[2025-12-14 19:00:20] [INFO] User logged in: admin
+[2025-12-14 19:00:20] [INFO] Login successful: admin (admin)
+[2025-12-14 19:01:47] [ADMIN] admin - Logged out
+[2025-12-14 19:01:47] [INFO] User logged out: admin
+[2025-12-14 19:02:08] [INFO] User logged in: ariful51
+[2025-12-14 19:02:08] [INFO] Login successful: ariful51 (student)
+[2025-12-14 19:02:08] [INFO] User logged in: ariful51
+[2025-12-14 19:02:08] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-14 19:02:19] [INFO] Application closed
+[2025-12-14 19:02:45] [INFO] Database initialized successfully
+[2025-12-14 19:02:47] [INFO] Application started successfully
+[2025-12-14 19:02:55] [INFO] User logged in: admin
+[2025-12-14 19:02:55] [INFO] Login successful: admin (admin)
+[2025-12-14 19:03:44] [INFO] Database initialized successfully
+[2025-12-14 19:03:45] [INFO] Application started successfully
+[2025-12-14 19:03:57] [INFO] User logged in: admin
+[2025-12-14 19:03:57] [INFO] Login successful: admin (admin)
+[2025-12-14 19:07:02] [INFO] Database initialized successfully
+[2025-12-14 19:07:03] [INFO] Application started successfully
+[2025-12-14 19:07:23] [INFO] User logged in: admin
+[2025-12-14 19:07:23] [INFO] Login successful: admin (admin)
+[2025-12-14 19:09:25] [INFO] Application closed
+[2025-12-14 19:09:36] [INFO] Database initialized successfully
+[2025-12-14 19:09:37] [INFO] Application started successfully
+[2025-12-14 19:09:55] [INFO] User logged in: ariful51
+[2025-12-14 19:09:55] [INFO] Login successful: ariful51 (student)
+[2025-12-14 19:09:55] [INFO] User logged in: ariful51
+[2025-12-14 19:09:55] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-14 19:11:08] [STUDENT] ariful51 - Submitted request: Schedule Adjustment
+[2025-12-14 19:11:13] [INFO] Message auto-refresh thread stopped for student: 2207051
+[2025-12-14 19:11:13] [STUDENT] ariful51 - Logged out
+[2025-12-14 19:11:13] [INFO] User logged out: ariful51
+[2025-12-14 19:11:27] [INFO] User logged in: admin
+[2025-12-14 19:11:27] [INFO] Login successful: admin (admin)
+[2025-12-14 19:11:40] [INFO] Application closed
+[2025-12-14 19:18:03] [INFO] Database initialized successfully
+[2025-12-14 19:18:04] [INFO] Application started successfully
+[2025-12-14 19:18:14] [INFO] User logged in: admin
+[2025-12-14 19:18:14] [INFO] Login successful: admin (admin)
+[2025-12-14 19:18:21] [INFO] Application closed
+[2025-12-14 19:21:05] [INFO] Database initialized successfully
+[2025-12-14 19:21:06] [INFO] Application started successfully
+[2025-12-14 19:21:21] [INFO] User logged in: ariful51
+[2025-12-14 19:21:21] [INFO] Login successful: ariful51 (student)
+[2025-12-14 19:21:21] [INFO] User logged in: ariful51
+[2025-12-14 19:21:21] [INFO] Message auto-refresh thread started for student: 2207051
+[2025-12-14 19:21:27] [INFO] Application closed
