@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.kuet_transportation_and_schedueling_system.controller.AdminDashboardController"
+            stylesheets="@../styles.css">
+
+    <!-- Top Navigation Bar -->
+    <top>
+        <VBox>
+            <HBox style="-fx-background-color: linear-gradient(to right, #1976D2, #1565C0); -fx-padding: 20 30;"
+                  spacing="20" alignment="CENTER_LEFT">
+                <Label text="🎯" style="-fx-font-size: 28px;"/>
+                <VBox spacing="2">
+                    <Label fx:id="welcomeLabel" text="Welcome, Admin" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label text="Transportation Control Panel" style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 13px;"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="logoutBtn" text="🚪 Logout" onAction="#handleLogout" styleClass="button-danger">
+                    <font><Font name="System Bold" size="13"/></font>
+                </Button>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #F5F5F5;" side="LEFT">
+
+            <!-- Dashboard Overview Tab -->
+            <Tab text="📊 Dashboard">
+                <ScrollPane fitToWidth="true" style="-fx-background: #F5F5F5; -fx-background-color: #F5F5F5;">
+                    <VBox spacing="25" style="-fx-padding: 25;">
+
+                        <!-- Stats Cards -->
+                        <GridPane hgap="20" vgap="20">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="25"/>
+                                <ColumnConstraints percentWidth="25"/>
+                                <ColumnConstraints percentWidth="25"/>
+                                <ColumnConstraints percentWidth="25"/>
+                            </columnConstraints>
+
+                            <!-- Total Routes Card -->
+                            <VBox styleClass="dashboard-card" spacing="10" GridPane.columnIndex="0" style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <Label text="🗺️" style="-fx-font-size: 32px;"/>
+                                <Label fx:id="totalRoutesLabel" text="0" styleClass="stat-value" style="-fx-text-fill: white;"/>
+                                <Label text="Total Routes" styleClass="stat-label" style="-fx-text-fill: rgba(255,255,255,0.9);"/>
+                            </VBox>
+
+                            <!-- Total Buses Card -->
+                            <VBox styleClass="dashboard-card" spacing="10" GridPane.columnIndex="1" style="-fx-background-color: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <Label text="🚌" style="-fx-font-size: 32px;"/>
+                                <Label fx:id="totalBusesLabel" text="0" styleClass="stat-value" style="-fx-text-fill: white;"/>
+                                <Label text="Total Buses" styleClass="stat-label" style="-fx-text-fill: rgba(255,255,255,0.9);"/>
+                            </VBox>
+
+                            <!-- Total Students Card -->
+                            <VBox styleClass="dashboard-card" spacing="10" GridPane.columnIndex="2" style="-fx-background-color: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <Label text="👥" style="-fx-font-size: 32px;"/>
+                                <Label fx:id="totalStudentsLabel" text="0" styleClass="stat-value" style="-fx-text-fill: white;"/>
+                                <Label text="Total Students" styleClass="stat-label" style="-fx-text-fill: rgba(255,255,255,0.9);"/>
+                            </VBox>
+
+                            <!-- Pending Requests Card -->
+                            <VBox styleClass="dashboard-card" spacing="10" GridPane.columnIndex="3" style="-fx-background-color: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                <Label text="📋" style="-fx-font-size: 32px;"/>
+                                <Label fx:id="pendingRequestsLabel" text="0" styleClass="stat-value" style="-fx-text-fill: white;"/>
+                                <Label text="Pending Requests" styleClass="stat-label" style="-fx-text-fill: rgba(255,255,255,0.9);"/>
+                            </VBox>
+                        </GridPane>
+
+                        <!-- Quick Actions -->
+                        <VBox spacing="15" styleClass="card">
+                            <Label text="⚡ Quick Actions" styleClass="section-title"/>
+                            <FlowPane hgap="15" vgap="15">
+                                <Button text="➕ Add Route" onAction="#handleAddRoute" styleClass="button-primary" prefWidth="180" prefHeight="45"/>
+                                <Button text="➕ Add Bus" onAction="#handleAddBus" styleClass="button-success" prefWidth="180" prefHeight="45"/>
+                                <Button text="📅 Create Schedule" onAction="#handleAddSchedule" styleClass="button-warning" prefWidth="180" prefHeight="45"/>
+                                <Button text="📢 Send Message" onAction="#handleSendToAll" styleClass="button-secondary" prefWidth="180" prefHeight="45"/>
+                            </FlowPane>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <!-- Routes Tab -->
+            <Tab text="🗺️ Routes">
+                <VBox spacing="20" style="-fx-padding: 25; -fx-background-color: #F5F5F5;">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="Route Management" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="addRouteBtn" text="➕ Add Route" onAction="#handleAddRoute" styleClass="button-success"/>
+                        <Button fx:id="editRouteBtn" text="✏️ Edit" onAction="#handleEditRoute" styleClass="button-warning"/>
+                        <Button fx:id="deleteRouteBtn" text="🗑️ Delete" onAction="#handleDeleteRoute" styleClass="button-danger"/>
+                        <Button fx:id="refreshRoutesBtn" text="🔄" onAction="#handleRefreshRoutes" styleClass="button-secondary" style="-fx-min-width: 40px;"/>
+                    </HBox>
+
+                    <TableView fx:id="routesTable" VBox.vgrow="ALWAYS" style="-fx-background-radius: 10;">
+                        <columns>
+                            <TableColumn fx:id="routeIdCol" text="ID" prefWidth="80"/>
+                            <TableColumn fx:id="routeNameCol" text="Route Name" prefWidth="250"/>
+                            <TableColumn fx:id="routeStartCol" text="Start Point" prefWidth="250"/>
+                            <TableColumn fx:id="routeEndCol" text="End Point" prefWidth="250"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Buses Tab -->
+            <Tab text="🚌 Buses">
+                <VBox spacing="20" style="-fx-padding: 25; -fx-background-color: #F5F5F5;">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="Bus Management" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="addBusBtn" text="➕ Add Bus" onAction="#handleAddBus" styleClass="button-success"/>
+                        <Button fx:id="editBusBtn" text="✏️ Edit" onAction="#handleEditBus" styleClass="button-warning"/>
+                        <Button fx:id="deleteBusBtn" text="🗑️ Delete" onAction="#handleDeleteBus" styleClass="button-danger"/>
+                        <Button fx:id="refreshBusesBtn" text="🔄" onAction="#handleRefreshBuses" styleClass="button-secondary" style="-fx-min-width: 40px;"/>
+                    </HBox>
+
+                    <TableView fx:id="busesTable" VBox.vgrow="ALWAYS" style="-fx-background-radius: 10;">
+                        <columns>
+                            <TableColumn fx:id="busIdCol" text="ID" prefWidth="80"/>
+                            <TableColumn fx:id="busNumberCol" text="Bus Number" prefWidth="300"/>
+                            <TableColumn fx:id="busCapacityCol" text="Capacity" prefWidth="200"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Schedules Tab -->
+            <Tab text="📅 Schedules">
+                <VBox spacing="20" style="-fx-padding: 25; -fx-background-color: #F5F5F5;">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="Schedule Management" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="addScheduleBtn" text="➕ Create Schedule" onAction="#handleAddSchedule" styleClass="button-success"/>
+                        <Button fx:id="deleteScheduleBtn" text="🗑️ Delete" onAction="#handleDeleteSchedule" styleClass="button-danger"/>
+                        <Button fx:id="refreshSchedulesBtn" text="🔄" onAction="#handleRefreshSchedules" styleClass="button-secondary" style="-fx-min-width: 40px;"/>
+                    </HBox>
+
+                    <TableView fx:id="schedulesTable" VBox.vgrow="ALWAYS" style="-fx-background-radius: 10;">
+                        <columns>
+                            <TableColumn fx:id="scheduleIdCol" text="ID" prefWidth="60"/>
+                            <TableColumn fx:id="scheduleBusCol" text="Bus" prefWidth="150"/>
+                            <TableColumn fx:id="scheduleRouteCol" text="Route" prefWidth="200"/>
+                            <TableColumn fx:id="scheduleDateCol" text="Date" prefWidth="120"/>
+                            <TableColumn fx:id="scheduleTimeCol" text="Time" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Students Tab -->
+            <Tab text="👥 Students">
+                <VBox spacing="20" style="-fx-padding: 25; -fx-background-color: #F5F5F5;">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="Student Management" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="assignStudentBtn" text="🎯 Assign Route/Bus" onAction="#handleAssignStudent" styleClass="button-primary"/>
+                        <Button fx:id="refreshStudentsBtn" text="🔄" onAction="#handleRefreshStudents" styleClass="button-secondary" style="-fx-min-width: 40px;"/>
+                    </HBox>
+
+                    <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS" style="-fx-background-radius: 10;">
+                        <columns>
+                            <TableColumn fx:id="studentIdCol" text="Student ID" prefWidth="120"/>
+                            <TableColumn fx:id="studentNameCol" text="Name" prefWidth="200"/>
+                            <TableColumn fx:id="studentDeptCol" text="Department" prefWidth="120"/>
+                            <TableColumn fx:id="studentRouteCol" text="Assigned Route" prefWidth="150"/>
+                            <TableColumn fx:id="studentBusCol" text="Assigned Bus" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Requests Tab -->
+            <Tab text="📋 Requests">
+                <VBox spacing="20" style="-fx-padding: 25; -fx-background-color: #F5F5F5;">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="Student Requests" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="approveRequestBtn" text="✅ Approve" onAction="#handleApproveRequest" styleClass="button-success"/>
+                        <Button fx:id="rejectRequestBtn" text="❌ Reject" onAction="#handleRejectRequest" styleClass="button-danger"/>
+                        <Button fx:id="refreshRequestsBtn" text="🔄" onAction="#handleRefreshRequests" styleClass="button-secondary" style="-fx-min-width: 40px;"/>
+                    </HBox>
+
+                    <TableView fx:id="requestsTable" VBox.vgrow="ALWAYS" style="-fx-background-radius: 10;">
+                        <columns>
+                            <TableColumn fx:id="requestIdCol" text="ID" prefWidth="60"/>
+                            <TableColumn fx:id="requestStudentCol" text="Student" prefWidth="150"/>
+                            <TableColumn fx:id="requestTypeCol" text="Type" prefWidth="150"/>
+                            <TableColumn fx:id="requestDescCol" text="Description" prefWidth="250"/>
+                            <TableColumn fx:id="requestStatusCol" text="Status" prefWidth="100"/>
+                            <TableColumn fx:id="requestDateCol" text="Date" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Messages Tab -->
+            <Tab text="📢 Messages">
+                <VBox spacing="20" style="-fx-padding: 25; -fx-background-color: #F5F5F5;">
+                    <VBox spacing="15" styleClass="card">
+                        <Label text="Send Message to Students" styleClass="section-title"/>
+
+                        <VBox spacing="8">
+                            <Label text="MESSAGE" styleClass="label-bold"/>
+                            <TextArea fx:id="messageTextArea" promptText="Type your message here..." prefRowCount="5"/>
+                        </VBox>
+
+                        <HBox spacing="10">
+                            <Button fx:id="sendToAllBtn" text="📢 Send to All Students" onAction="#handleSendToAll" styleClass="button-primary" prefWidth="200"/>
+                            <Button fx:id="sendToSelectedBtn" text="📤 Send to Selected" onAction="#handleSendToSelected" styleClass="button-success" prefWidth="200"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>
+

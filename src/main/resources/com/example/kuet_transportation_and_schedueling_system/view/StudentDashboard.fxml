@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.kuet_transportation_and_schedueling_system.controller.StudentDashboardController"
+            stylesheets="@../styles.css">
+
+    <!-- Top Navigation Bar -->
+    <top>
+        <VBox>
+            <HBox style="-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-padding: 20 30;"
+                  spacing="20" alignment="CENTER_LEFT">
+                <Label text="🎓" style="-fx-font-size: 28px;"/>
+                <VBox spacing="2">
+                    <Label fx:id="welcomeLabel" text="Welcome, Student" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label fx:id="studentInfoLabel" text="Student Dashboard" style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 13px;"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="logoutBtn" text="🚪 Logout" onAction="#handleLogout" styleClass="button-danger">
+                    <font><Font name="System Bold" size="13"/></font>
+                </Button>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: #F5F5F5; -fx-background-color: #F5F5F5;">
+            <VBox spacing="25" style="-fx-padding: 30;">
+
+                <!-- Personal Information Card -->
+                <VBox spacing="20" styleClass="card">
+                    <Label text="👤 Personal Information" styleClass="section-title"/>
+                    <GridPane hgap="20" vgap="15">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="30"/>
+                            <ColumnConstraints percentWidth="70"/>
+                        </columnConstraints>
+
+                        <Label text="Student ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="label-bold"/>
+                        <Label fx:id="studentIdLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 14px;"/>
+
+                        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="label-bold"/>
+                        <Label fx:id="nameLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 14px;"/>
+
+                        <Label text="Department:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="label-bold"/>
+                        <Label fx:id="departmentLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 14px;"/>
+                    </GridPane>
+                </VBox>
+
+                <!-- Transportation Info Cards -->
+                <GridPane hgap="20" vgap="20">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <!-- Assigned Route Card -->
+                    <VBox styleClass="dashboard-card" spacing="15" GridPane.columnIndex="0" style="-fx-background-color: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <Label text="🗺️" style="-fx-font-size: 48px;"/>
+                        <Label text="Assigned Route" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="assignedRouteLabel" text="Not Assigned" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        <HBox spacing="10">
+                            <VBox spacing="5">
+                                <Label text="From:" style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12px;"/>
+                                <Label fx:id="routeStartLabel" text="-" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                            </VBox>
+                            <Label text="→" style="-fx-text-fill: white; -fx-font-size: 20px;"/>
+                            <VBox spacing="5">
+                                <Label text="To:" style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12px;"/>
+                                <Label fx:id="routeEndLabel" text="-" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+
+                    <!-- Assigned Bus Card -->
+                    <VBox styleClass="dashboard-card" spacing="15" GridPane.columnIndex="1" style="-fx-background-color: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <Label text="🚌" style="-fx-font-size: 48px;"/>
+                        <Label text="Assigned Bus" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="assignedBusLabel" text="Not Assigned" style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+                        <HBox spacing="15">
+                            <VBox spacing="5">
+                                <Label text="Capacity:" style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12px;"/>
+                                <Label fx:id="busCapacityLabel" text="-" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </GridPane>
+
+                <!-- Schedule Information -->
+                <VBox spacing="15" styleClass="card">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="📅 My Schedule" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="refreshScheduleBtn" text="🔄 Refresh" onAction="#handleRefreshSchedule" styleClass="button-primary"/>
+                    </HBox>
+
+                    <TableView fx:id="scheduleTable" prefHeight="250" style="-fx-background-radius: 10;">
+                        <columns>
+                            <TableColumn fx:id="scheduleRouteCol" text="Route" prefWidth="200"/>
+                            <TableColumn fx:id="scheduleBusCol" text="Bus" prefWidth="150"/>
+                            <TableColumn fx:id="scheduleDateCol" text="Date" prefWidth="120"/>
+                            <TableColumn fx:id="scheduleTimeCol" text="Time" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Request Change Section -->
+                <VBox spacing="15" styleClass="card">
+                    <Label text="📝 Request Route/Bus Change" styleClass="section-title"/>
+
+                    <VBox spacing="10">
+                        <Label text="REQUEST TYPE" styleClass="label-bold" style="-fx-font-size: 12px;"/>
+                        <ComboBox fx:id="requestTypeCombo" promptText="Select request type" maxWidth="Infinity" prefHeight="45">
+                            <items>
+                                <javafx.collections.FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Route Change"/>
+                                    <String fx:value="Bus Change"/>
+                                    <String fx:value="Schedule Adjustment"/>
+                                    <String fx:value="Other"/>
+                                </javafx.collections.FXCollections>
+                            </items>
+                        </ComboBox>
+                    </VBox>
+
+                    <VBox spacing="10">
+                        <Label text="DESCRIPTION" styleClass="label-bold" style="-fx-font-size: 12px;"/>
+                        <TextArea fx:id="requestDescriptionArea" promptText="Describe your request..." prefRowCount="4"/>
+                    </VBox>
+
+                    <HBox spacing="15">
+                        <Button fx:id="submitRequestBtn" text="📤 Submit Request" onAction="#handleSubmitRequest"
+                                styleClass="button-success" prefWidth="200" prefHeight="40"/>
+                        <Label fx:id="requestStatusLabel" wrapText="true" style="-fx-text-fill: #4CAF50;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- My Requests History -->
+                <VBox spacing="15" styleClass="card">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="📋 My Requests" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="refreshRequestsBtn" text="🔄 Refresh" onAction="#handleRefreshRequests" styleClass="button-secondary"/>
+                    </HBox>
+
+                    <TableView fx:id="requestsTable" prefHeight="200" style="-fx-background-radius: 10;">
+                        <columns>
+                            <TableColumn fx:id="requestTypeCol" text="Type" prefWidth="150"/>
+                            <TableColumn fx:id="requestDescCol" text="Description" prefWidth="300"/>
+                            <TableColumn fx:id="requestStatusCol" text="Status" prefWidth="120"/>
+                            <TableColumn fx:id="requestDateCol" text="Date" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Messages Section -->
+                <VBox spacing="15" styleClass="card">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="📬 Messages &amp; Notifications" styleClass="section-title"/>
+                        <Label fx:id="unreadCountLabel" text="0 unread" styleClass="badge-info" style="-fx-text-fill: white; -fx-background-color: #2563EB; -fx-background-radius: 12px; -fx-padding: 5px 12px; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="refreshMessagesBtn" text="🔄 Refresh" onAction="#handleRefreshMessages" styleClass="button-secondary"/>
+                    </HBox>
+
+                    <TableView fx:id="messagesTable" prefHeight="250" style="-fx-background-radius: 10;">
+                        <columns>
+                            <TableColumn fx:id="messageDateCol" text="Date/Time" prefWidth="180"/>
+                            <TableColumn fx:id="messageContentCol" text="Message" prefWidth="400"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
+
