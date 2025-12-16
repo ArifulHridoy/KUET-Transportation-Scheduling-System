@@ -558,3 +558,359 @@ public class AdminDashboardController {
             showError("Failed to load schedules: " + e.getMessage());
         }
     }
+private void initializeStudentsTable() {
+        studentIdCol.setCellValueFactory(new PropertyValueFactory<>("studentId"));
+        studentNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        studentDeptCol.setCellValueFactory(new PropertyValueFactory<>("department"));
+
+        // Initialize route and bus columns if they exist
+        if (studentRouteCol != null) {
+            studentRouteCol.setCellValueFactory(cellData -> {
+                Integer routeId = cellData.getValue().getAssignedRouteId();
+                if (routeId != null) {
+                    try {
+                        Route route = routeDAO.getRouteById(routeId);
+                        return new javafx.beans.property.SimpleStringProperty(route != null ? route.getName() : "N/A");
+                    } catch (Exception e) {
+                        return new javafx.beans.property.SimpleStringProperty("N/A");
+                    }
+                }
+                return new javafx.beans.property.SimpleStringProperty("Not Assigned");
+            });
+        }
+
+        if (studentBusCol != null) {
+            studentBusCol.setCellValueFactory(cellData -> {
+                Integer busId = cellData.getValue().getAssignedBusId();
+                if (busId != null) {
+                    try {
+                        Bus bus = busDAO.getBusById(busId);
+                        return new javafx.beans.property.SimpleStringProperty(bus != null ? bus.getBusNumber() : "N/A");
+                    } catch (Exception e) {
+                        return new javafx.beans.property.SimpleStringProperty("N/A");
+                    }
+                }
+                return new javafx.beans.property.SimpleStringProperty("Not Assigned");
+            });
+        }
+    }
+
+    @FXML private void handleAssignStudent(ActionEvent event) {
+        Student selected = studentsTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            showError("Please select a student!");
+            return;
+        }
+
+        try {
+            ObservableList<Bus> buses = busDAO.getAllBuses();
+            ObservableList<Route> routes = routeDAO.getAllRoutes();
+
+            if (buses.isEmpty() || routes.isEmpty()) {
+                showError("Please add buses and routes first!");
+                return;
+            }
+
+            Dialog<Void> dialog = new Dialog<>();
+            dialog.setTitle("Assign Bus & Route");
+            dialog.setHeaderText("Assign to: " + selected.getName());
+
+            ButtonType assignButtonType = new ButtonType("Assign", ButtonBar.ButtonData.OK_DONE);
+            dialog.getDialogPane().getButtonTypes().addAll(assignButtonType, ButtonType.CANCEL);
+
+            GridPane grid = new GridPane();
+            grid.setHgap(10);
+            grid.setVgap(10);
+
+            ComboBox<Bus> busCombo = new ComboBox<>(buses);
+            ComboBox<Route> routeCombo = new ComboBox<>(routes);
+
+            grid.add(new Label("Bus:"), 0, 0);
+            grid.add(busCombo, 1, 0);
+            grid.add(new Label("Route:"), 0, 1);
+            grid.add(routeCombo, 1, 1);
+
+            dialog.getDialogPane().setContent(grid);
+
+            dialog.setResultConverter(dialogButton -> {
+                if (dialogButton == assignButtonType) {
+                    try {
+                        Bus selectedBus = busCombo.getValue();
+                        Route selectedRoute = routeCombo.getValue();
+
+                        if (selectedBus == null || selectedRoute == null) {
+                            showError("Please select both bus and route!");
+                            return null;
+                        }
+
+                        studentDAO.assignBusAndRoute(selected.getStudentId(),
+                                selectedBus.getBusId(), selectedRoute.getRouteId());
+                        Logger.getInstance().adminAction(SessionManager.getInstance().getCurrentUser().getUsername(),
+                                "Assigned student " + selected.getStudentId() + " to bus/route");
+                        loadStudents();
+                        showSuccess("Student assigned successfully!");
+                    } catch (Exception e) {
+                        showError("Failed to assign: " + e.getMessage());
+                    }
+                }
+                return null;
+            });
+
+            dialog.showAndWait();
+        } catch (Exception e) {
+            showError("Failed to load data: " + e.getMessage());
+        }
+    }
+
+    @FXML private void handleRemoveAssignment(ActionEvent event) {
+        Student selected = studentsTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            showError("Please select a student!");
+            return;
+        }
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm Remove");
+        alert.setHeaderText("Remove Assignment");
+        alert.setContentText("Remove bus/route assignment for: " + selected.getName() + "?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            try {
+                studentDAO.removeAssignment(selected.getStudentId());
+                Logger.getInstance().adminAction(SessionManager.getInstance().getCurrentUser().getUsername(),
+                        "Removed assignment for student: " + selected.getStudentId());
+                loadStudents();
+                showSuccess("Assignment removed successfully!");
+            } catch (Exception e) {
+                showError("Failed to remove assignment: " + e.getMessage());
+            }
+        }
+    }
+
+    @FXML private void handleRefreshStudents(ActionEvent event) {
+        loadStudents();
+    }
+
+    private void loadStudents() {
+        try {
+            ObservableList<Student> students = studentDAO.getAllStudents();
+            studentsTable.setItems(students);
+        } catch (Exception e) {
+            showError("Failed to load students: " + e.getMessage());
+        }
+    }
+
+    private void initializeRequestsTable() {
+        requestIdCol.setCellValueFactory(new PropertyValueFactory<>("requestId"));
+
+        // Use the combined student column
+        if (requestStudentCol != null) {
+            requestStudentCol.setCellValueFactory(cellData -> {
+                String studentId = cellData.getValue().getStudentId();
+                String studentName = cellData.getValue().getStudentName();
+                String combined = studentId + (studentName != null ? " - " + studentName : "");
+                return new javafx.beans.property.SimpleStringProperty(combined);
+            });
+        }
+
+        // Initialize separate columns only if they exist
+        if (requestStudentIdCol != null) {
+            requestStudentIdCol.setCellValueFactory(new PropertyValueFactory<>("studentId"));
+        }
+        if (requestStudentNameCol != null) {
+            requestStudentNameCol.setCellValueFactory(new PropertyValueFactory<>("studentName"));
+        }
+
+        requestTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
+        requestDescCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+        requestStatusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        // Initialize date column if it exists
+        if (requestDateCol != null) {
+            requestDateCol.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
+        }
+    }
+
+    @FXML
+    private void handleApproveRequest(ActionEvent event) {
+        Request selected = requestsTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            showError("Please select a request!");
+            return;
+        }
+
+        if (selected.getStatus() != RequestStatus.PENDING) {
+            showError("Can only approve pending requests!");
+            return;
+        }
+
+        try {
+            requestDAO.approveRequest(selected.getRequestId());
+
+            // Send notification to student
+            Student student = studentDAO.getStudentByStudentId(selected.getStudentId());
+            if (student != null) {
+                messageDAO.sendMessage(student.getId(),
+                        "Your request (" + selected.getType() + ") has been APPROVED.");
+            }
+
+            Logger.getInstance().adminAction(SessionManager.getInstance().getCurrentUser().getUsername(),
+                    "Approved request: " + selected.getRequestId());
+            loadRequests();
+            showSuccess("Request approved!");
+        } catch (Exception e) {
+            showError("Failed to approve request: " + e.getMessage());
+        }
+    }
+
+    @FXML private void handleRejectRequest(ActionEvent event) {
+        Request selected = requestsTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            showError("Please select a request!");
+            return;
+        }
+
+        if (selected.getStatus() != RequestStatus.PENDING) {
+            showError("Can only reject pending requests!");
+            return;
+        }
+
+        try {
+            requestDAO.rejectRequest(selected.getRequestId());
+            Student student = studentDAO.getStudentByStudentId(selected.getStudentId());
+            if (student != null) {
+                messageDAO.sendMessage(student.getId(),
+                        "Your request (" + selected.getType() + ") has been REJECTED.");
+            }
+
+            Logger.getInstance().adminAction(SessionManager.getInstance().getCurrentUser().getUsername(),
+                    "Rejected request: " + selected.getRequestId());
+            loadRequests();
+            showSuccess("Request rejected!");
+        } catch (Exception e) {
+            showError("Failed to reject request: " + e.getMessage());
+        }
+    }
+
+    @FXML private void handleRefreshRequests(ActionEvent event) {
+        loadRequests();
+    }
+
+    private void loadRequests() {
+        try {
+            ObservableList<Request> requests = requestDAO.getAllRequests();
+            requestsTable.setItems(requests);
+        } catch (Exception e) {
+            showError("Failed to load requests: " + e.getMessage());
+        }
+    }
+
+    @FXML private void handleSendMessage(ActionEvent event) {
+        String message = messageTextArea.getText().trim();
+        if (message.isEmpty()) {
+            showError("Please enter a message!");
+            return;
+        }
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm Send");
+        alert.setHeaderText("Send Message to All Students");
+        alert.setContentText("Send this message to all registered students?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            try {
+                messageDAO.sendMessageToAllStudents(message);
+                Logger.getInstance().adminAction(SessionManager.getInstance().getCurrentUser().getUsername(),
+                        "Sent broadcast message to all students");
+                messageTextArea.clear();
+                showSuccess("Message sent to all students!");
+            } catch (Exception e) {
+                showError("Failed to send message: " + e.getMessage());
+            }
+        }
+    }
+
+    @FXML private void handleSendToAll(ActionEvent event) {
+        String message = messageTextArea.getText().trim();
+
+        if (message.isEmpty()) {
+            showError("Please enter a message!");
+            return;
+        }
+
+        try {
+            messageDAO.sendMessageToAllStudents(message);
+            Logger.getInstance().adminAction(SessionManager.getInstance().getCurrentUser().getUsername(),
+                    "Sent broadcast message to all students");
+            messageTextArea.clear();
+            showSuccess("Message sent to all students!");
+        } catch (Exception e) {
+            showError("Failed to send message: " + e.getMessage());
+        }
+    }
+
+    @FXML private void handleSendToSelected(ActionEvent event) {
+        String message = messageTextArea.getText().trim();
+
+        if (message.isEmpty()) {
+            showError("Please enter a message!");
+            return;
+        }
+
+        try {
+            messageDAO.sendMessageToAllStudents(message);
+            Logger.getInstance().adminAction(SessionManager.getInstance().getCurrentUser().getUsername(),
+                    "Sent message to students");
+            messageTextArea.clear();
+            showSuccess("Message sent successfully!");
+        } catch (Exception e) {
+            showError("Failed to send message: " + e.getMessage());
+        }
+    }
+
+    @FXML private void handleLogout(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm Logout");
+        alert.setHeaderText("Logout");
+        alert.setContentText("Are you sure you want to logout?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            try {
+                Logger.getInstance().adminAction(SessionManager.getInstance().getCurrentUser().getUsername(),
+                        "Logged out");
+                SessionManager.getInstance().logout();
+                SceneManager.switchScene("/com/example/kuet_transportation_and_schedueling_system/view/Login.fxml",
+                        "Login");
+            } catch (IOException e) {
+                showError("Failed to logout: " + e.getMessage());
+            }
+        }
+    }
+
+    private void loadAllData() {
+        loadRoutes();
+        loadBuses();
+        loadSchedules();
+        loadStudents();
+        loadRequests();
+    }
+
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void showSuccess(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+}
